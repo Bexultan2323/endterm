@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="aitu-project">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Product List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+    <script>
+        document.write('<base href="' + document.location + '" />');
+    </script>
+    <script src="https://code.angularjs.org/1.5.8/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="ProductCtrl">
+
+
+<div class="container">
+    <h3>Product List</h3>
+
+    <div class="row">
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>categoryID</th>
+                <th>name</th>
+                <th>price</th>
+                <th>description</th>
+                <th>production_date</th>
+                <th>expiry_date</th>
+                <th>barcode</th>
+                <th>weight</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in productList">
+                <td ng-bind="item.product_id "></td>
+                <td ng-bind="item.category_id "></td>
+                <td ng-bind="item.product_name "></td>
+                <td ng-bind="item.product_price "></td>
+                <td ng-bind="item.description "></td>
+                <td ng-bind="item.production_date "></td>
+                <td ng-bind="item.expiry_date "></td>
+                <td ng-bind="item.barcode "></td>
+                <td ng-bind="item.weight "></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+
+</html>
