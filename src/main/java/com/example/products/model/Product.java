@@ -11,17 +11,14 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="Products")
-public class Products {
+@Table(name = "product")
+public class Product {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
-     private long product_id;
+     private long id;
+     @Column
      private long category_id;
-     private String product_name;
-     private float product_price;
+     private String name;
+     private float price;
      private String description;
-     private String production_date;
-     private String expiry_date;
-     private String barcode;
-     private String weight;
 }

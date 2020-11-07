@@ -1,7 +1,6 @@
 package com.example.products.repository;
 
 import com.example.products.model.Category;
-import com.example.products.model.Products;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

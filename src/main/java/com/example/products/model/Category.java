@@ -10,12 +10,12 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="Category")
+@Table(name = "category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long category_id;
-    private String category_name;
+    private long id;
+    @Column
+    private String name;
     private String description;
-    private String subcategory;
 }
