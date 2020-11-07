@@ -15,12 +15,12 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @RequestMapping(value="/product",method= RequestMethod.GET, headers = "Accept=application/json")
+    @GetMapping(value="/product")
     public ResponseEntity<?> getAll() {
         return ResponseEntity.ok(productService.getAll());
 
     }
-    @RequestMapping(value="/product/cate/{id}",method=RequestMethod.GET, headers = "Accept=application/json")
+    @GetMapping(value="/product/cate/{id}")
     public ResponseEntity<?> getcate(@PathVariable long id){
         return ResponseEntity.ok(productService.findAllByCategory_id(id));
     }

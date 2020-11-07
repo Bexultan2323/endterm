@@ -3,6 +3,7 @@ package com.example.products.service;
 import com.example.products.model.Product;
 import com.example.products.repository.ProductRepository;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

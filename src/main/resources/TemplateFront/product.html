@@ -31,15 +31,14 @@
         <div class="col-lg-6">
             <input type="text" placeholder="Your login" name="login" required ng-model="account.login" class="form-control form-control-lg inverse-mode">
             <input type="password" placeholder="Your password" name="password" required ng-model="account.password" class="form-control form-control-lg inverse-mode">
-            <button type="submit" class="btn btn-success btn-block btn-lg">Sign In</button>
+            <button type="submit" class="btn btn-success btn-block btn-lg">Войти</button>
         </div>
     </div>
 </form>
 
 <div class="row" style="text-align: center">
     <div class="col-lg-12">
-        <label class="col-sm-2 col-form-label" style="text-align: center">{{shopMessage}} {{shop.name}}</label>
-
+        <h2 <label class="col-sm-2 col-form-label" style="text-align: center">{{shopMessage}} {{shop.name}}</label></h2>
     </div>
 
 </div>
@@ -59,7 +58,7 @@
                 <thead>
                 <th></th>
                 <th>ID</th>
-                <th>Category type</th>
+                <th>Category ID</th>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Description</th>
@@ -85,7 +84,7 @@
                 <th>Quantity</th>
                 </thead>
                 <tr ng-repeat="product in orderProductList" >
-                    <td ng-click="removeProduct(product)"><button class="btn btn-danger btn-md">REMOVE</button></td>
+                    <td ng-click="removeProduct(product)"><button class="btn btn-danger btn-md">Delete</button></td>
                     <td ng-bind="product.name"></td>
                     <td ng-bind="product.description"></td>
                     <td ng-bind="product.price"></td>
@@ -94,7 +93,7 @@
                 <tr ng-bind="totalPrice"></tr>
             </table>
             <button ng-click="SendOrder()" type="button" class="btn btn-primary btn-block btn-lg">Send</button>
-            <button ng-click="SeeOrder()" type="button" class="btn btn-primary btn-block btn-lg">See Order</button>
+            <button ng-click="SeeOrder()" type="button" class="btn btn-primary btn-block btn-lg">Orders</button>
 
 
             <table class="table table-bordered table-striped table-condensed">
