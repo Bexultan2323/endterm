@@ -12,7 +12,8 @@ CREATE TABLE product (
                            category_id int8,
                            name varchar(255),
                            price float8,
-                           description TEXT
+                           description TEXT,
+                           discount float8
     );
 
 

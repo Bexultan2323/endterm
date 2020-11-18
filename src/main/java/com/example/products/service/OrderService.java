@@ -28,7 +28,8 @@ public class OrderService {
     public void save(long shop_id){
         LocalDate date = LocalDate.now();
         float total_price=0;
-        orderRepository.insertorder(shop_id,total_price,date,1);
+        float discount=0;
+        orderRepository.insertorder(shop_id,total_price,date,1,discount);
     }
 
 

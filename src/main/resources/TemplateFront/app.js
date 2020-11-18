@@ -132,7 +132,8 @@ app.controller('ProductCtrl', function($scope, $http) {
                 name: product.name,
                 price: product.price,
                 description: product.description,
-                quantity: 0
+                quantity: 0,
+                productDiscount: product.discount
             };
         }
         $scope.orderProductList[product.id].quantity = $scope.orderProductList[product.id].quantity + 1;
@@ -157,6 +158,7 @@ app.controller('ProductCtrl', function($scope, $http) {
         $scope.productsID = [];
         $scope.productsQuantity = [];
         $scope.productsPrice = [];
+        $scope.productDiscount=[];
         angular.forEach($scope.orderProductList, function (value) {
             $scope.productsID.push(value.id);
             if ($scope.productsQuantity[value.id] === undefined) {
@@ -164,6 +166,9 @@ app.controller('ProductCtrl', function($scope, $http) {
             }
             if ($scope.productsPrice[value.id] === undefined) {
                 $scope.productsPrice[value.id] = value.price;
+            }
+            if ($scope.productDiscount[value.id] === undefined) {
+                $scope.productDiscount[value.id] = value.productDiscount;
             }
         });
     }
@@ -197,7 +202,8 @@ app.controller('ProductCtrl', function($scope, $http) {
                 "shop_id": $scope.shop.id,
                 "product_id": $scope.productsID,
                 "quantity": $scope.productsQuantity,
-                "price": $scope.productsPrice
+                "price": $scope.productsPrice,
+                "discount":$scope.productDiscount
             }
         }).then(function (response) {
             console.log(response);

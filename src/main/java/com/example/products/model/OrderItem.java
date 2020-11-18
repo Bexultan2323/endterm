@@ -20,5 +20,6 @@ public class OrderItem {
     private long product_id;
     private int quantity;
     private float price;
+    private float productDiscount;
 
 }

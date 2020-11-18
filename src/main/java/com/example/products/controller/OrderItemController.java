@@ -20,8 +20,8 @@ public class OrderItemController {
     }
 
     @PostMapping(value="/orderItem/create")
-    public void save(@RequestHeader("shop_id") long shop_id, @RequestHeader("product_id") ArrayList<Integer> product_id, @RequestHeader("quantity") ArrayList<Integer> quantity, @RequestHeader("price") ArrayList<Float> price){
-        orderItemService.save( shop_id, product_id, quantity, price);
+    public void save(@RequestHeader("shop_id") long shop_id, @RequestHeader("product_id") ArrayList<Integer> product_id, @RequestHeader("quantity") ArrayList<Integer> quantity, @RequestHeader("price") ArrayList<Float> price,@RequestHeader("productDiscount") ArrayList<Float> productDiscount){
+        orderItemService.save( shop_id, product_id, quantity, price,productDiscount);
     }
     @GetMapping(value="/orderItem/auth")
     public ResponseEntity<?> getorderitem(@RequestHeader("shop_id") long shop_id){

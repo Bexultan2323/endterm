@@ -21,6 +21,7 @@ public class Order {
     @Column
     private long shop_id;
     private float total_price;
+    private float productDiscount;
     private Date date;
     private long status;
     @Transient
