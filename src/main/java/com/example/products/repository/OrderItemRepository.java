@@ -16,8 +16,8 @@ import java.util.List;
 public interface OrderItemRepository extends CrudRepository<OrderItem, Long> {
     @Transactional
     @Modifying
-    @Query(value = "insert into order_item (order_id,product_id,quantity,price,productDiscount) values(:order_id,:product_id,:quantity,:price,:productDiscount)", nativeQuery = true )
-    void insertorderitem(@Param("order_id") long order_id,@Param("product_id") long product_id,@Param("quantity") int quantity, @Param("price") float price,@Param("productDiscount") float productDiscount);
+    @Query(value = "insert into order_item (order_id,product_id,quantity,price) values(:order_id,:product_id,:quantity,:price)", nativeQuery = true )
+    void insertorderitem(@Param("order_id") long order_id,@Param("product_id") long product_id,@Param("quantity") int quantity, @Param("price") float price);
     @Query(value = "select * from order_item where order_id=?", nativeQuery = true )
     List<OrderItem> getByorder_id(long id);
 

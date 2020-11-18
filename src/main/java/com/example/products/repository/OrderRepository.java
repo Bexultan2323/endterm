@@ -17,8 +17,8 @@ import java.util.List;
 public interface OrderRepository extends CrudRepository<Order, Long> {
     @Transactional
     @Modifying
-    @Query(value = "insert into orderr(shop_id,total_price,date,status,productDiscount) values(:shop_id,:total_price,:date,:status,:productDiscount)", nativeQuery = true )
-    void insertorder(@Param("shop_id") long shop_id, @Param("total_price") float total_price, @Param("date") LocalDate date, @Param("status") long status,@Param("productDiscount")float productDiscount);
+    @Query(value = "insert into orderr(shop_id,total_price,date,status) values(:shop_id,:total_price,:date,:status)", nativeQuery = true )
+    void insertorder(@Param("shop_id") long shop_id, @Param("total_price") float total_price, @Param("date") LocalDate date, @Param("status") long status);
 
     @Query(value = "Select * from orderr where shop_id=? ORDER BY id DESC LIMIT 1", nativeQuery = true )
     Order findByShopId(long shop_id);

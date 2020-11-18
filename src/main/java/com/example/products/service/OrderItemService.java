@@ -25,15 +25,15 @@ public class OrderItemService {
 
 
 
-    public void save(long shop_id, ArrayList<Integer> product_id, ArrayList<Integer> quantity, ArrayList<Float> price,ArrayList<Float> productDiscount) {
+    public void save(long shop_id, ArrayList<Integer> product_id, ArrayList<Integer> quantity, ArrayList<Float> price,ArrayList<Float> discount) {
         float total_price=0;
         for (int id : product_id) {
             int q = quantity.get(id);
             float p = price.get(id);
-           float d= productDiscount.get(id);
+            float d=discount.get(id);
             total_price+=q*p-q*p*d/100;
             Order order = orderRepository.findByShopId(shop_id);
-            orderItemRepository.insertorderitem(order.getId(), id, q, p,d);
+            orderItemRepository.insertorderitem(order.getId(), id, q, p);
             orderRepository.updateprice(total_price,order.getId());
 
         }
